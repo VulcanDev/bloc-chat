@@ -1,16 +1,126 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-
 nav {
-  width: 12vw;
+  width: 100%;
+}
+
+header {
+  z-index: 9999!important;
+  overflow: hidden;
+  box-shadow: none!important;
+}
+
+header h2 {
+  font-weight: 700!important;
 }
 
 .App {
-  font-family: Roboto;
-  text-align: center;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   color: black;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.button {
-  margin: 1rem;
+.roomList {
+  padding-top: 4rem;
+}
+
+.add-room button {
+  width: 100%;
+}
+
+.Main-container {
+  margin: 4rem auto auto 15rem;
+  background: #FAFAFA;
+  width: calc(100vw - 15rem);
+  height: calc(100vh - 4rem);
+}
+
+.room-title {
+  color: #212121!important;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.card {
+  box-shadow: none!important;
+  border: solid #e0e0e0;
+  border-width: 1px 0 1px 0;
+}
+
+.message {
+  background: #eeeeee;
+}
+
+.message-left {
+  display: inline-block;
+  width: 50%;
+}
+
+.message-right {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.message-username {
+  font-weight: bold!important;
+  text-align: left;
+}
+
+.message-content {
+  text-align: left;
+}
+
+.message-timestamp {
+  color: #9E9E9E!important;
+  font-weight: 600!important;
+  text-align: right;
+}
+
+.roomListItem {
+  pointer-events: none!important;
+}
+
+.drawer:first-of-type div {
+  width: 15rem!important;
+  z-index: 50!important;
+}
+
+.form-wrap {
+  background: white;
+  text-align: center;
+  margin: auto;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.form-wrap form{
+  padding: 0.7rem;
+}
+
+.form-wrap:first-of-type div {
+  padding-right: 1rem;
+}
+
+::-webkit-scrollbar {
+    background: transparent; 
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #bdbdbd;
+}
+
+#message-list {
+  height: calc(100vh - 4rem);
+  max-height: calc(100vh - 10rem);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#no-messages-text {
+  width:50%;
+  margin: 0 auto;
 }
