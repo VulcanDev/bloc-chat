@@ -44,8 +44,10 @@ class App extends Component {
 
     this.state = {
       activeRoom: {key: null},
+      roomList: [],
       signedIn: false,
       user: {},
+      uid: 0,
       userOptOpen: false,
       signOutPopupOpen: false,
       sureToSignOut: false,
@@ -80,9 +82,9 @@ class App extends Component {
 
 
   signIn(authResults) {
-    authResults = authResults || {user: {displayName: 'Guest'}};
+    authResults = authResults || {user: {displayName: 'Guest', uid: 0}};
 
-    this.setState({ signedIn: true, user: authResults.user});
+    this.setState({ signedIn: true, user: authResults.user, uid: authResults.user.uid});
     this.setState({ usernameWidth: Math.floor(this.getTextWidth(authResults.user.displayName, '16pt roboto')) + 1 });
   }
 
@@ -158,7 +160,7 @@ class App extends Component {
               >Sign Out</Button>
             </Popover>
             <main className="Main-container">
-              <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+              <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} />
             </main>
             <Drawer variant="permanent" className="drawer">
               <RoomList firebase={firebase} updateRoom={(room) => this.setState({ activeRoom: room })}/>

@@ -14,10 +14,6 @@ header h2 {
   font-weight: 700!important;
 }
 
-svg {
-  padding-right: 0.5rem;
-}
-
 .App {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   color: black;
@@ -31,6 +27,10 @@ svg {
   width: 100%;
   height: 100vh;
   text-align: center;
+}
+
+.icon {
+  padding-right: 0.5rem;
 }
 
 .sign-in-button {
@@ -86,12 +86,13 @@ svg {
     height: 4rem;
 }
 
-div:nth-of-type(3) > div:nth-of-type(2):not(.sign-out-popup) { /* Popover Selector */
+.user-options div:nth-child(2) { /* User Option Popover Selector */
   box-shadow: none!important;
   background: #eeeeee;
   border-style: solid;
   border-color: #aeaeae16 #aeaeae16 #aeaeae32;
   border-width: 1px 1px 2px;
+  border-radius: 0 0 2px 2px!important;
 }
 
 div:nth-of-type(3) { /* Make sure popups are on the top */
@@ -152,10 +153,18 @@ div:nth-of-type(3) { /* Make sure popups are on the top */
 }
 
 .Main-container {
-  margin: 4rem auto auto 15rem;
+  position: absolute;
   background: #FAFAFA;
-  width: calc(100vw - 15rem);
+  width: calc(100vw - 16rem);
   height: calc(100vh - 4rem);
+  max-height: calc(100vh - 4rem);
+  top: 4rem;
+  left: 15rem;
+  bottom: 0;
+}
+
+.message-container {
+  height: 100%;
 }
 
 .room-title {
@@ -209,11 +218,18 @@ div:nth-of-type(3) { /* Make sure popups are on the top */
   z-index: 50!important;
 }
 
+.room-creation div:nth-child(2) { /* Room Creation Popover Selector */
+  box-shadow: none;
+}
+
 .form-wrap {
   background: white;
   text-align: center;
   margin: auto;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  border-style: solid!important;
+  border-width: 1px 1px 2px!important;
+  border-color: #eeeeee!important;
+  border-radius: 2px!important;
 }
 
 .form-wrap form{
@@ -224,6 +240,9 @@ div:nth-of-type(3) { /* Make sure popups are on the top */
   padding-right: 1rem;
 }
 
+.room-create-button {
+  box-shadow: none!important;
+}
 ::-webkit-scrollbar {
     background: transparent; 
     width: 0.5rem;
@@ -234,9 +253,46 @@ div:nth-of-type(3) { /* Make sure popups are on the top */
   background: #bdbdbd;
 }
 
+.chat-bar-container {
+  width: 100%;
+  max-height: 6rem;
+}
+
+.chat-bar-container input {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  display: inline-block;
+  height: 32px;
+  width: calc(100% - 7rem);
+  padding: 0.5rem;
+  color: #212121;
+  border-style: solid;
+  border-width: 1px 0 2px 1px;
+  border-color: #eeeeee;
+  border-radius: 4px 0 0 4px;
+}
+
+.chat-bar-container input:focus {
+  outline: none;
+}
+
+.chat-bar-container button {
+  display: inline-block;
+  box-shadow: none;
+  width: 5rem;
+  height: 51px;
+  border-style: solid!important;
+  border-width: 1px 1px 2px 0!important;
+  border-color: #eeeeee!important;
+  border-radius: 0 4px 4px 0!important;
+}
+
+#message-form {
+  height: 4rem;
+  margin: 0 auto;
+}
+
 #message-list {
-  height: calc(100vh - 4rem);
-  max-height: calc(100vh - 10rem);
+  height: calc(100vh - 12rem);
   overflow-y: scroll;
   overflow-x: hidden;
 }

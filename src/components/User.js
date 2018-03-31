@@ -3,7 +3,7 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import PersonOutline from 'material-ui-icons/PersonOutline';
 import VpnKey from 'material-ui-icons/VpnKey';
-import { Fade } from 'material-ui/transitions';
+
 export default class User extends Component {
     constructor(props) {
         super(props);
@@ -44,8 +44,8 @@ export default class User extends Component {
                         <Typography className="title" variant="title">Welcome to Bloc Chat</Typography>
                         <Typography className="title-cursor" variant="title">{this.state.cursor}</Typography>
                     </div>
-                    <Button className="sign-in-button" onClick={() =>  this.signIn() }><VpnKey /> Sign In</Button>
-                    <Button className="sign-in-button" onClick={() => this.props.signIn()}><PersonOutline /> Guest</Button>
+                    <Button className="sign-in-button" onClick={() =>  this.signIn() }><VpnKey className="icon" /> Sign In</Button>
+                    <Button className="sign-in-button" onClick={() => this.props.signIn()}><PersonOutline className="icon" /> Guest</Button>
                 </div>
             </div>
         );

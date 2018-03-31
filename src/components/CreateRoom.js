@@ -12,7 +12,6 @@ export default class CreateRoom extends Component {
 
         this.state = {
             newRoomName: '',
-            snackbarOpen: false,
             textError: false,
             helperText: '',
             open: false,
@@ -32,9 +31,6 @@ export default class CreateRoom extends Component {
 
     handleToggle(toToggle) {
         switch (toToggle) {
-            case 'snackbar':
-                this.setState({ snackbarOpen: !this.state.snackbarOpen });
-                break;
             case 'this':
                 this.setState({ 
                     open: !this.state.open,
@@ -49,11 +45,8 @@ export default class CreateRoom extends Component {
 
     handleClose(toClose) {
         switch (toClose) {
-            case 'snackbar':
-                this.setState({ snackbarOpen: false });
-                break;
             case 'this':
-                this.setState({ open : false});
+                this.setState({ open : false, helperText: '', textError: false});
                 break;
             default:
                 break;
@@ -93,8 +86,6 @@ export default class CreateRoom extends Component {
                 name: this.state.newRoomName
             });
 
-            this.handleToggle('snackbar');
-
             this.setState({ newRoomName: '', textError: false, helperText: '' });
         } else if (validStatus === -1) {
             this.setState({ textError: true, helperText: 'Please enter a room name' });
@@ -107,6 +98,7 @@ export default class CreateRoom extends Component {
         return (
             <div className="add-room">
                 <Popover
+                    className='room-creation'
                     open={this.state.open}
                     anchorEl={this.state.anchorEl}
                     anchorReference={this.state.anchorRef}
@@ -131,7 +123,7 @@ export default class CreateRoom extends Component {
                                 error={this.state.textError}
                                 onChange={(e) => this.handleChange(e)}
                             />
-                            <Button type="submit" color="primary" variant="raised">
+                            <Button className="room-create-button" type="submit" color="primary" variant="raised">
                                 Create
                             </Button>
                         </form>
