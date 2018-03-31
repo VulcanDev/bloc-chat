@@ -5,7 +5,7 @@ nav {
 }
 
 header {
-  z-index: 9999!important;
+  z-index: 8000!important;
   overflow: hidden;
   box-shadow: none!important;
 }
@@ -14,12 +14,123 @@ header h2 {
   font-weight: 700!important;
 }
 
+svg {
+  padding-right: 0.5rem;
+}
+
 .App {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   color: black;
   text-align: center;
   overflow: hidden;
   z-index: 1;
+}
+
+.user-screen {
+  background: #3949AB;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.sign-in-button {
+  color: white!important;
+  width: 7vw!important;
+  height: 5vh!important;
+  font-size: 1.1rem!important;
+}
+
+.user {
+  position: relative;;
+  top: 40%;
+  height: 10rem;
+}
+
+.title {
+  font-size: 6.5vw!important;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.toolbar {
+  margin-right: 0!important;
+  padding-right: 0!important;
+}
+
+.app-title {
+  min-width: 6rem;
+}
+
+.sign-out-container {
+  text-align: right;
+  width: 100%;
+  height: 4rem;
+  padding-left: 6rem;
+}
+
+.sign-out-container button {
+    color:white!important;
+    height: 4rem;
+}
+
+div:nth-of-type(3) > div:nth-of-type(2):not(.sign-out-popup) { /* Popover Selector */
+  box-shadow: none!important;
+  background: #eeeeee;
+  border-style: solid;
+  border-color: #aeaeae16 #aeaeae16 #aeaeae32;
+  border-width: 1px 1px 2px;
+}
+
+div:nth-of-type(3) { /* Make sure popups are on the top */
+  z-index: 9999!important;
+}
+
+.sign-out-popup {
+  position: absolute;
+  width: 22rem;
+  height: 12rem;
+  background: #fafafa;
+  border-radius: 2px;
+  border: none;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto 65vh auto;
+}
+
+.sign-out-popup:focus {
+  outline: none;
+}
+
+.sop-title {
+  padding: 1rem;
+  background: #3949AB;
+  height: 1.5rem;
+  border-radius: 2px 2px 0 0;
+}
+
+.sop-prompt {
+  padding: 1rem;
+}
+
+.sop-buttons {
+  position: absolute;
+  width: 21rem;
+  text-align: right;
+  margin: 0.5rem;
+  bottom: 0;
+}
+
+.divider {
+  margin-bottom: 0.5rem!important;
+}
+
+.sign-out {
+  color: red!important;
 }
 
 .roomList {

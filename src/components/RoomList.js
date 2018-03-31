@@ -3,7 +3,7 @@ import List from 'material-ui/List';
 import { ListItem, ListItemText  } from 'material-ui/List';
 import ListSubheader from 'material-ui/List/ListSubheader';
 
-class RoomList extends Component {
+export default class RoomList extends Component {
     constructor(props) {
         super(props);
 
@@ -16,19 +16,20 @@ class RoomList extends Component {
     }
 
     componentDidMount() {
-        let firstRun = false;
+        let newRoomArr = [];
 
         this.roomsRef.on('child_added', snapshot => {
             const room = snapshot.val();
             room.key = snapshot.key;
-            firstRun = true;
 
-            this.setState({ rooms: this.state.rooms.concat(room) });
-            
-            if (firstRun) {
+            newRoomArr.push(room);
+
+            if (this.state.rooms.length > 0) {
                 this.setState({ activeRoom: this.state.rooms[0].key });
             }
         });
+
+        this.setState({ rooms: newRoomArr });
     }
 
     render() {
@@ -51,5 +52,3 @@ class RoomList extends Component {
         );
     }
 }
-
-export default RoomList;
