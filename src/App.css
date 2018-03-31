@@ -46,13 +46,23 @@ svg {
   height: 10rem;
 }
 
-.title {
+.title,
+.title-cursor {
+  display: inline-block!important;
   font-size: 6.5vw!important;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.title {
+  width: fit-content;
+}
+
+.title-cursor {
+  width: 2vw;
 }
 
 .toolbar {

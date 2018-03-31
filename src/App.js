@@ -173,6 +173,7 @@ class App extends Component {
           firebase={firebase} 
           thestyle={{display: this.state.signedIn ? 'none' : 'block'}} 
           signIn={(authResults) => this.signIn(authResults)}
+          getTextWidth={this.getTextWidth}
         />
       </MuiThemeProvider>
     );
